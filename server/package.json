@@ -1,8 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "reMig": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate",
     "undoMig": "npx sequelize db:migrate:undo:all",
@@ -11,7 +12,8 @@
     "undoSeed": "npx sequelize db:seed:undo:all",
     "createDB": "npx sequelize db:create",
     "dropDB": "npx sequelize db:drop",
-    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:undo:all && npx sequelize db:seed:all"
+    "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:undo:all && npx sequelize db:seed:all",
+    "dev": "nodemon app.js --ext js,jsx,json"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,12 @@
     "globals": "^15.8.0"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.4",
     "pg": "^8.12.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.3",
