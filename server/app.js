@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const indexRoute = require('./routes/index.routes')
 const configServer = require('./config/configServer')
@@ -15,3 +16,4 @@ app.use('/api', indexRoute)
 app.listen(PORT, () => {
     console.log(`Сидим на ${PORT} порте`);
 })
+
