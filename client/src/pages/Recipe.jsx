@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
 
 
-function RecipePage({user}) {
-    const [recipes, setRecipes] = useState([]);
+function RecipePage({user, recipes, setRecipes }) {
+    
 
    const recipesLoad=()=>{
      apiAxiosInstance.get('/recipe').then(({data})=>setRecipes((data))).catch(err=>console.log(err))

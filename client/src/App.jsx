@@ -7,11 +7,12 @@ import AuthorizationPage from "./pages/Authorization";
 import LogoutPage from "./pages/Logout";
 import RegistrationPage from "./pages/Registration";
 import NotFound from "./pages/NotFound";
+import FavouritePage from "./pages/FavouritePage";
 
 
 function App() {
   const [user, setUser] = useState(null);
-  // const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     axiosInstance.get("/tokens/refresh").then(({ data }) => {
@@ -25,7 +26,7 @@ function App() {
       <Nav user={user} />
 
       <Routes>
-        <Route path="/recipe" element={<Recipe user={user} />} />
+        <Route path="/recipe" element={<Recipe user={user} recipes={recipes} setRecipes={setRecipes}  />} />
         <Route
           path="/auth/authorization"
           element={<AuthorizationPage setUser={setUser} />}
@@ -38,6 +39,7 @@ function App() {
           path="/auth/logout"
           element={<LogoutPage user={user} setUser={setUser} />}
         />
+        <Route path="/favourite" element={<FavouritePage recipes={recipes}/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
