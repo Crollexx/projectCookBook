@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import apiAxiosInstance from "../service/axiosInstance";
 import { Link } from "react-router-dom";
+import RecipeCard from "./RecipeCard";
 
 
 function RecipePage({user}) {
@@ -17,7 +18,7 @@ function RecipePage({user}) {
 
     return (
     <>
-    {recipes.map((el)=> (<div key={el.id}>{el.title}</div>))}
+    {recipes.map((el)=> <RecipeCard key = {el.id} card={el}/>)}
     </>
     )
 }
