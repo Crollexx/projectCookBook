@@ -4,12 +4,12 @@ import {NavLink} from 'react-router-dom'
 function Nav({user}) {
     return (
         <nav>
-            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/recipe'>Recipe</NavLink>
             
             {
                 user ? 
                 <>             
-                    <NavLink to='/recipe'>Posts</NavLink>
+                    
                     <NavLink to='/auth/logout'>Logout</NavLink>
                 </>
                 :
