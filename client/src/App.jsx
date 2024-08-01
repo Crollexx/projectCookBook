@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [recipes, setRecipes] = useState([]);
+  // const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     axiosInstance.get("/tokens/refresh").then(({ data }) => {
@@ -25,7 +25,7 @@ function App() {
       <Nav user={user} />
 
       <Routes>
-        <Route path="/" element={<Recipe user={user} />} />
+        <Route path="/recipe" element={<Recipe user={user} />} />
         <Route
           path="/auth/authorization"
           element={<AuthorizationPage setUser={setUser} />}
