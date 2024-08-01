@@ -39,7 +39,7 @@ function App() {
           path="/auth/logout"
           element={<LogoutPage user={user} setUser={setUser} />}
         />
-        <Route path="/favourite" element={<FavouritePage recipes={recipes}/>}/>
+        <Route path="/favourite/*" element={<FavouritePage  user={user}/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
