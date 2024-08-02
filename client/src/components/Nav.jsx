@@ -24,7 +24,7 @@ function Nav({ user }) {
                 {user ? (
                     <>
                         <NavLink to='/auth/logout'>Logout</NavLink>
-                        <NavLink to='/favourite'>Favourite</NavLink>
+                        <NavLink to='/favourite/:id'>Favourite</NavLink>
                     </>
                 ) : (
                     <>
