@@ -14,6 +14,7 @@ const RecipeCard = ({ user, card }) => {
       .catch((err) => console.error(err));
   };
 
+
   const recipeOneLoad = () => {
     axiosInstance
       .get(`/recipe/${card.id}`)
@@ -24,6 +25,7 @@ const RecipeCard = ({ user, card }) => {
   useEffect(() => {
     recipeOneLoad();
   }, []);
+
 
   return (
     <div className="recipe-card">

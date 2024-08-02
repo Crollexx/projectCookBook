@@ -1,8 +1,9 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axiosInstance from '../service/axiosInstance';
 import { useState } from 'react';
 
 export default function Card({ recipe, user }) {
+  // const {id} = useParams();
   const navigate = useNavigate();
   const [liked, setLiked] = useState(false);
 
@@ -12,32 +13,37 @@ export default function Card({ recipe, user }) {
       .then(({ data }) => setLiked(data.likeState))
       .catch((err) => console.error(err));
   };
+  const deleteFavourite = () => {
+    axiosInstance.delete(`/favourite/${recipe.id}`)
+    .then(() => {
+        navigate('/posts')
+    })
+    .catch(err => console.log(err))}
 
   return (
+    <>
     <div className="card p-2 g-col-6" style={{ width: '18rem' }}>
       <img
         src={recipe.photo}
-        className="card-img-top"
-        alt="Фото квартиры мечты"
       />
       <div className="card-body">
         <h5 className="card-title">{recipe.title}</h5>
         
         <button
-          onClick={() => navigate(`/favourite/${recipe.id}`)}
+          onClick={() => navigate(`/recipe/${recipe.id}`)}
           className="btn btn-primary"
         >
-          Посмотреть
+          Подробнее
         </button>
         <button
-          onClick={addToFavorites}
-          type="button"
-          className="btn btn-outline-danger mx-2"
+          onClick={deleteFavourite}
+          className="btn btn-primary"
         >
-          В избранное
+          Удалить из избранного
         </button>
+        
       </div>
-    </div>
+    </div></>
   );
 }
 

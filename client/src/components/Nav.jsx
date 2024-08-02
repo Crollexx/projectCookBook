@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Nav.css'; // Подключаем CSS для стилей
 
+
 function Nav({ user }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
 
     return (
         <nav className="navbar">
