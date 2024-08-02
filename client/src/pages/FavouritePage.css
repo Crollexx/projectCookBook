@@ -4,8 +4,8 @@
     background-color: #f4f4f4;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Размещаем содержимое в колонку */
-    align-items: center; /* Центрируем содержимое по горизонтали */
+    flex-direction: column;
+    align-items: center;
 }
 
 .Apartments {
@@ -13,21 +13,21 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    max-width: 1200px; /* Или другая максимальная ширина */
-    margin-top: 20px; /* Отступ сверху, если нужно */
+    max-width: 1200px;
+    margin-top: 20px;
 }
 
 h3 {
     color: #333;
     font-size: 1.8rem;
     margin: 0;
-    text-align: center; /* Центрируем текст */
+    text-align: center;
 }
 
 section {
     margin: 10px;
-    width: 100%; /* Убираем фиксированную ширину */
-    max-width: 300px; /* Устанавливаем максимальную ширину карточки */
+    width: 100%;
+    max-width: 300px;
 }
 
 .card {
@@ -36,6 +36,7 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 15px;
     width: 100%;
+    margin: 10px; /* Добавляем отступы вокруг карточки */
 }
 
 .card img {

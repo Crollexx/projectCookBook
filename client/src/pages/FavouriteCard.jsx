@@ -32,7 +32,7 @@ export default function Card({ recipe,user }) {
         <h5 className="card-title">{recipe.title}</h5>
         
         <button
-          onClick={() => navigate(`/recipe/${recipe.id}`)}
+          onClick={() => navigate(`/${recipe.id}`)}
           className="btn btn-primary"
         >
           Подробнее
