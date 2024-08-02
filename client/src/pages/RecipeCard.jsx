@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../service/axiosInstance";
 import './RecipeCard.css'; // Подключаем стили
 
-const RecipeCard = ({ user, card }) => {
+const RecipeCard = ({ user, card}) => {
   const navigate = useNavigate();
   const [liked, setLiked] = useState(false);
 
@@ -15,16 +15,7 @@ const RecipeCard = ({ user, card }) => {
   };
 
 
-  const recipeOneLoad = () => {
-    axiosInstance
-      .get(`/recipe/${card.id}`)
-      .then(({ data }) => setRecipe(data))
-      .catch((err) => console.log(err));
-  };
 
-  useEffect(() => {
-    recipeOneLoad();
-  }, []);
 
 
   return (
