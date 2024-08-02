@@ -1,26 +1,25 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import apiAxiosInstance from "../service/axiosInstance";
-import { Link } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
+import './RecipePage.css'; // Подключаем стили
 
+function RecipePage({ user, recipes, setRecipes }) {
 
-function RecipePage({user, recipes, setRecipes }) {
-    
+    const recipesLoad = () => {
+        apiAxiosInstance.get('/recipe')
+            .then(({ data }) => setRecipes(data))
+            .catch(err => console.log(err));
+    };
 
-   const recipesLoad=()=>{
-     apiAxiosInstance.get('/recipe').then(({data})=>setRecipes((data))).catch(err=>console.log(err))
-   }
-   useEffect(()=>{
-    recipesLoad()
-   },[])
+    useEffect(() => {
+        recipesLoad();
+    }, []);
 
     return (
-    <>
-    {recipes.map((el)=> <RecipeCard key = {el.id} card={el} user={user}/>)}
-    </>
-    )
+        <div className="recipe-page">
+            {recipes.map((el) => <RecipeCard key={el.id} user={user} card={el} />)}
+        </div>
+    );
 }
 
 export default RecipePage;

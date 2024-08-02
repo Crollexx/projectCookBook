@@ -1,8 +1,107 @@
-/* RecipePage.css */
-.recipe-page {
+/* RecipeCard.css */
+.recipe-card {
     display: flex;
-    flex-direction: column; /* Располагаем карточки в колонку */
-    align-items: center; /* Центрируем карточки по горизонтали */
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 50%;
+    max-width: 400px;
+    height: auto; /* Гибкая высота */
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Соотношение сторон 4:3 */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.time {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.ingredients {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.ingredients div {
+    margin: 5px 0;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
     padding: 10px;
-    box-sizing: border-box;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn-details {
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+}
+
+.btn-details:hover {
+    background-color: #555;
+}
+
+.btn-favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #ff6f61;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.btn-favorite.liked {
+    color: #ff3b30;
+}
+
+.btn-favorite:hover {
+    color: #ff5f50;
 }

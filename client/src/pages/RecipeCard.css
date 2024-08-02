@@ -1,53 +1,112 @@
 /* RecipeCard.css */
 .recipe-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 50%; /* Ширина карточки 50% */
-    height: 400px; /* Высота карточки */
-    margin: 10px 0; /* Отступы сверху и снизу */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 50%;
+    max-width: 400px;
+    height: auto; /* Гибкая высота */
     position: relative;
-    box-sizing: border-box;
 }
 
-.card-image {
+.image-container {
     position: relative;
     width: 100%;
-    height: 60%; /* Высота изображения 60% от высоты карточки */
+    padding-top: 75%; /* Соотношение сторон 4:3 */
     overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.card-image img {
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%; /*Высота изображения по высоте контейнера*/
-    object-fit: cover; /* Обрезаем изображение по контейнеру */
+    height: 100%;
+    object-fit: cover;
 }
 
 .time {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
 }
 
-.card-details {
+h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.ingredients {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.ingredients div {
+    margin: 5px 0;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
     padding: 10px;
-    height: 40%; /* Высота деталей карточки 40% от высоты карточки */
-    box-sizing: border-box;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-.card-details h3 {
-    margin: 0;
-    font-size: 18px;
+.btn-details {
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
 }
 
-.card-details p {
-    font-size: 14px;
-    color: #666;
+.btn-details:hover {
+    background-color: #555;
+}
+
+.btn-favorite {
+    position: absolute;
+    bottom: 10px; /* Переместили в нижний край */
+    left: 10px; /* Переместили в левый край */
+    background-color: transparent;
+    color: #ff007f; /* Ярко-розовый цвет по умолчанию */
+    width: 96px; /* Увеличили размер */
+    height: 96px; /* Увеличили размер */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.btn-favorite.liked {
+    color: #0a0100; /* Ярко-красный цвет при клике */
+}
+
+.btn-favorite:hover {
+    color: #ff007f; /* Ярко-розовый цвет при наведении */
+}
+
+.btn-favorite svg {
+    width: 100%;
+    height: 100%;
 }
