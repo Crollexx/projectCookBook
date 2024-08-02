@@ -18,7 +18,7 @@ function AuthorizationPage({ setUser }) {
             .then(({ data }) => {
                 setAccessToken(data.accessToken);
                 setUser(data.user);
-                navigate('/recipe');
+                navigate('/');
             })
             .catch(err => {
                 setError(err.response.data.message);

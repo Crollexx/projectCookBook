@@ -6,7 +6,7 @@ const tokens = require('./tokens.routes')
 
 router.use('/auth', auth)
 router.use('/favourite', favourite)
-router.use('/recipe', recipe)
+router.use('/', recipe)
 router.use('/tokens', tokens)
 
 

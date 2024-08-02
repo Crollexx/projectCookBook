@@ -6,7 +6,7 @@ import './RecipePage.css'; // Подключаем стили
 function RecipePage({ user, recipes, setRecipes }) {
 
     const recipesLoad = () => {
-        apiAxiosInstance.get('/recipe')
+        apiAxiosInstance.get('/')
             .then(({ data }) => setRecipes(data))
             .catch(err => console.log(err));
     };

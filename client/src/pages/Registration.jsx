@@ -1,13 +1,14 @@
 import { useState } from "react";
 import apiAxiosInstance, { setAccessToken } from "../service/axiosInstance";
 import './Auth.css'; 
+import { useNavigate } from "react-router-dom";
 
 function RegistrationPage({ setUser }) {
     const [login, setLogin] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirm, setConfirm] = useState('');
-
+    const navigate = useNavigate();
     const registrationUser = (event) => {
         event.preventDefault();
 
@@ -16,6 +17,7 @@ function RegistrationPage({ setUser }) {
                 .then(({ data }) => {
                     setAccessToken(data.accessToken);
                     setUser(data.user);
+                    navigate('/');
                 })
                 .catch(err => console.log(err));
         }

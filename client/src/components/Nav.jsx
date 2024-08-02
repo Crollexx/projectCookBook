@@ -20,11 +20,11 @@ function Nav({ user }) {
                 <div className={`burger-bar ${isOpen ? 'open' : ''}`}></div>
             </div>
             <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-                <NavLink to='/recipe'>Recipe</NavLink>
+                <NavLink to='/'>Recipe</NavLink>
                 {user ? (
                     <>
                         <NavLink to='/auth/logout'>Logout</NavLink>
-                        <NavLink to='/favourite/:id'>Favourite</NavLink>
+                        <NavLink to={`/favourite/${user.id}`}>Favourite</NavLink>
                     </>
                 ) : (
                     <>
