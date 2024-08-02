@@ -12,15 +12,15 @@ const RecipeCard = ({user,card}) => {
       .then(({ data }) => setLiked(data.likeState))
       .catch((err) => console.error(err));
   };
-  const recipeOneLoad = () => {
-    axiosInstance
-      .get(`/recipe/${card.id}`)
-      .then(({ data }) => setRecipe(data))
-      .catch((err) => console.log(err));
-  };
-  useEffect(() => {
-    recipeOneLoad();
-  }, []);
+  // const recipeOneLoad = () => {
+  //   axiosInstance
+  //     .get(`/recipe/${card.id}`)
+  //     .then(({ data }) => setRecipe(data))
+  //     .catch((err) => console.log(err));
+  // };
+  // useEffect(() => {
+  //   recipeOneLoad();
+  // }, []);
   return (
     <>
       <div>{card.title}</div>

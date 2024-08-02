@@ -30,5 +30,15 @@ router.post('/', async (req, res) => {
       res.status(500).json({ err: message });
     }
   });
+  router.delete('/:id/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+  
+      const data = await UserRecipe.destroy({where:{id}})
+  
+    } catch ({ message }) {
+      res.status(500).json({ err: message });
+    }
+  });
 
 module.exports = router

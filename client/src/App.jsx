@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import FavouritePage from "./pages/FavouritePage";
 import RecipeCard from "./pages/RecipeCard";
 import BigCard from "./pages/BigCard";
+import FavouriteBig from "./pages/FavouriteBig";
 
 
 function App() {
@@ -41,7 +42,9 @@ function App() {
           path="/auth/logout"
           element={<LogoutPage user={user} setUser={setUser} />}
         />
-        <Route path="/favourite/:id" element={<FavouritePage  user={user}/>}/>
+        <Route path="/favourite/:id/:id" element={<FavouriteBig  user={user} recipes={recipes}/>}/>
+        
+        <Route path="/favourite/:id" element={<FavouritePage  recipes={recipes} user={user}/>}/>
         <Route path="/recipe/:id" element={<BigCard user={user} recipes={recipes}/>}/>
         
         <Route path="*" element={<NotFound />} />
