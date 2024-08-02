@@ -1,0 +1,62 @@
+/* Nav.css */
+.navbar {
+    position: relative;
+    background-color: #333;
+    padding: 10px;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.burger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.burger-bar.open:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.burger-bar.open:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-bar.open:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1;
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+}
