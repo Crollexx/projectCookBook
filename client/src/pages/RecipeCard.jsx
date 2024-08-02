@@ -45,7 +45,7 @@ const RecipeCard = ({ user, card}) => {
       </div>
       <div className="actions">
         <button
-          onClick={() => navigate(`/recipe/${card.id}`)}
+          onClick={() => navigate(`/${card.id}`)}
           className="btn btn-details"
         >
           Подробнее

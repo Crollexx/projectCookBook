@@ -2,23 +2,25 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axiosInstance from '../service/axiosInstance';
 import { useState } from 'react';
 
-export default function Card({ recipe, user }) {
+export default function Card({ recipe,user }) {
   // const {id} = useParams();
   const navigate = useNavigate();
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
 
-  const addToFavorites = () => {
-    axiosInstance
-      .post('/favourite', { recipeId: recipe.id, userId: user.id })
-      .then(({ data }) => setLiked(data.likeState))
-      .catch((err) => console.error(err));
-  };
+
+  // const addToFavorites = () => {
+  //   axiosInstance
+  //     .post('/favourite', { recipeId: recipe.id, userId: user.id })
+  //     .then(({ data }) => setLiked(data.likeState))
+  //     .catch((err) => console.error(err));
+  // };
   const deleteFavourite = () => {
-    axiosInstance.delete(`/favourite/${recipe.id}`)
+    axiosInstance.delete(`/favourite/${user.id}/${recipe.id}`)
     .then(() => {
-        navigate('/posts')
+        navigate(`/favourite/${user.id}`)
     })
-    .catch(err => console.log(err))}
+    .catch(err => console.log(err))
+  }
 
   return (
     <>

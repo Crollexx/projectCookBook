@@ -1,0 +1,92 @@
+/* FavouritePage.css */
+.container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Размещаем содержимое в колонку */
+    align-items: center; /* Центрируем содержимое по горизонтали */
+}
+
+.Apartments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Или другая максимальная ширина */
+    margin-top: 20px; /* Отступ сверху, если нужно */
+}
+
+h3 {
+    color: #333;
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center; /* Центрируем текст */
+}
+
+section {
+    margin: 10px;
+    width: 100%; /* Убираем фиксированную ширину */
+    max-width: 300px; /* Устанавливаем максимальную ширину карточки */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.card-ingredients {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card-time {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.card-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.no-favorites {
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,41 +1,44 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../service/axiosInstance";
 import FavouriteCard from "../pages/FavouriteCard";
+import "./FavouritePage.css"; // Подключаем стили
 
-
-
-function FavouritePage({ user }) {
+function FavouritePage({ user, setRecipes }) {
   const [likedApartments, setlikedApartments] = useState([]);
 
   const loadLikedApartments = () => {
     axiosInstance
-      .get(`/favourite/${user.id}`)
+      .get(`/favourite/${user?.id}`)
       .then((response) => setlikedApartments(response.data))
       .catch((err) => console.error(err.message));
   };
 
+  const recipesLoad = () => {
+    axiosInstance.get('/recipe')
+          .then(({ data }) => setRecipes(data))
+          .catch(err => console.log(err));
+    };
+
+
   useEffect(() => {
     loadLikedApartments();
-  }, []);
+    recipesLoad();
+  }, [user]);
 
   return (
     <div className="container">
-      <div className="sideBar">
-        
-      </div>
+      <h3>Ваши любимые блюда</h3>
       <div className="Apartments">
-        <h3>Квартиры, которые вам понравились</h3>
-        <br />
         {likedApartments.length ? (
-          likedApartments.map((recipe) => {
-            return (
-              <section key={recipe.id}>
-                <FavouriteCard recipe={recipe} user={user}></FavouriteCard>
-              </section>
-            );
-          })
+          likedApartments.map((recipe) => (
+            <section key={recipe.id}>
+              <FavouriteCard recipe={recipe} user={user}/>
+            </section>
+          ))
         ) : (
-          <section>К сожалению, вы еще не добавили ничего в избранное</section>
+          <section className="no-favorites">
+            К сожалению, вы еще не добавили ничего в избранное
+          </section>
         )}
       </div>
     </div>
