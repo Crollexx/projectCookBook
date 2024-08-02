@@ -8,7 +8,7 @@ export default function Card({ recipe, user }) {
 
   const addToFavorites = () => {
     axiosInstance
-      .post('/likes', { recipeId: recipe.id, userId: user.id })
+      .post('/favourite', { recipeId: recipe.id, userId: user.id })
       .then(({ data }) => setLiked(data.likeState))
       .catch((err) => console.error(err));
   };
