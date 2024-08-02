@@ -18,7 +18,7 @@ function RecipePage({user, recipes, setRecipes }) {
 
     return (
     <>
-    {recipes.map((el)=> <RecipeCard key = {el.id} card={el}/>)}
+    {recipes.map((el)=> <RecipeCard key = {el.id} card={el} user={user}/>)}
     </>
     )
 }
