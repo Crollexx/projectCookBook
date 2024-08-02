@@ -1,0 +1,53 @@
+/* RecipeCard.css */
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 50%; /* Ширина карточки 50% */
+    height: 400px; /* Высота карточки */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    background-color: #fff;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 60%; /* Высота изображения 60% от высоты карточки */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%; /*Высота изображения по высоте контейнера*/
+    object-fit: cover; /* Обрезаем изображение по контейнеру */
+}
+
+.time {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.card-details {
+    padding: 10px;
+    height: 40%; /* Высота деталей карточки 40% от высоты карточки */
+    box-sizing: border-box;
+}
+
+.card-details h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card-details p {
+    font-size: 14px;
+    color: #666;
+}
