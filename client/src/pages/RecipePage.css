@@ -1,0 +1,8 @@
+/* RecipePage.css */
+.recipe-page {
+    display: flex;
+    flex-direction: column; /* Располагаем карточки в колонку */
+    align-items: center; /* Центрируем карточки по горизонтали */
+    padding: 10px;
+    box-sizing: border-box;
+}
